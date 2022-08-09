@@ -1,8 +1,13 @@
 <template>
   <div class="min-h-screen bg-slate-50">
-    <main class="max-w-[1400px] mx-auto py-5">
-      <Todo />
-    </main>
+    <section class="text-center py-10">
+      <h1 class="text-4xl font-bold text-gray-700">What are we doing today</h1>
+    </section>
+
+    <section class="md:w-8/12 mx-auto lg:w-6/12 p-4 rounded-lg max-w-md">
+      <TodoInput />
+      <TodoList />
+    </section>
   </div>
 </template>
 

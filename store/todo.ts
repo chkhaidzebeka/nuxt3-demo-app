@@ -6,9 +6,16 @@ const state = (): TodoInterface => ({
   todos: [],
 });
 
+const isDuplicate = (title: string, array: TodoInterface) => {
+  return array.todos.some((item) => item.title === title);
+};
+
 const actions = {
   add(title: string) {
     const self: TodoInterface = this;
+
+    if (isDuplicate(title, self))
+      return console.warn(`todo with title ${title} already exists`);
 
     const newTodo: TodoType = {
       id: uuid(),

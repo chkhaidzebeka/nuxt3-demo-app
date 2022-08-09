@@ -92,4 +92,12 @@ describe("useTodoStore", () => {
 
     expect(store.todos[0].done).toBe(true);
   });
+
+  test("doesn't add duplicate todo", () => {
+    const title = "newly added item";
+    store.add(title);
+    store.add(title);
+
+    expect(store.todos.length).toBe(1);
+  });
 });
